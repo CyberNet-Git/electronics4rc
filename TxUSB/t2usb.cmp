@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20080825c) date = 5/10/2009-10:52:16
+Cmp-Mod V01 Created by CVpcb (20080825c) date = 7/10/2009-05:49:01
 
 BeginCmp
 TimeStamp = /4AC9BB2E;
@@ -32,7 +32,7 @@ BeginCmp
 TimeStamp = /4AC9BAD6;
 Reference = IC1;
 ValeurCmp = ATMEGA8-PU;
-IdModule  = atmega8-DIL28-3;
+IdModule  = atmega8-TQFP32-08;
 EndCmp
 
 BeginCmp
