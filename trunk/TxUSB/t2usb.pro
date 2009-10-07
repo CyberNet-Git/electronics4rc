@@ -1,4 +1,4 @@
-update=5/10/2009-11:40:34
+update=7/10/2009-07:52:16
 last_client=KiCad
 [eeschema]
 version=1
@@ -125,5 +125,5 @@ LibName8=display
 LibName9=valves
 [general]
 version=1
-RootSch=t2usb.sch
-BoardNm=t2usb.brd
+RootSch=
+BoardNm=
