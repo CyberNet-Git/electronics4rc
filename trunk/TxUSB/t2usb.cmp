@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = 07.10.2009 23:16:32
+Cmp-Mod V01 Created by CVpcb (20090216-RC5) date = 11.10.2009 21:51:47
 
 BeginCmp
 TimeStamp = /4AC9BB2E;
@@ -53,7 +53,7 @@ BeginCmp
 TimeStamp = /4AC9BF37;
 Reference = P3;
 ValeurCmp = ISP;
-IdModule  = pin_array_3x2;
+IdModule  = CONN-12pin-H;
 EndCmp
 
 BeginCmp
@@ -95,7 +95,7 @@ BeginCmp
 TimeStamp = /4AC9CD64;
 Reference = X1;
 ValeurCmp = ZTT-12MHz;
-IdModule  = HC-33UV;
+IdModule  = QUARZ;
 EndCmp
 
 EndListe

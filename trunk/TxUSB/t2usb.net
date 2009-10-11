@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  07.10.2009 23:16:32
+# EESchema Netlist Version 1.1 created  11.10.2009 21:51:47
 (
  ( /4AC9BB2E SM0805 C1 1.0
   ( 1 N-000007 )
@@ -56,7 +56,7 @@
   ( 3 N-000006 )
   ( 4 GND )
  )
- ( /4AC9BF37 pin_array_3x2 P3 ISP
+ ( /4AC9BF37 CONN-12pin-H P3 ISP
   ( 1 N-000014 )
   ( 2 N-000010 )
   ( 3 N-000013 )
@@ -86,7 +86,7 @@
   ( 1 N-000010 )
   ( 2 N-000008 )
  )
- ( /4AC9CD64 HC-33UV X1 ZTT-12MHz
+ ( /4AC9CD64 QUARZ X1 ZTT-12MHz
   ( 1 N-000009 )
   ( 2 N-000005 )
  )
