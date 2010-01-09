@@ -1,22 +1,21 @@
-EESchema-DOCLIB  Version 2.0  14/10/2009 20:59:48
-#
-$CMP CONN_6
-D ymbole general de connecteur
-K CONN
-$ENDCMP
+EESchema-DOCLIB  Version 2.0  18/10/2009 16:31:04
 #
 $CMP DB9
 K CONN
 $ENDCMP
 #
-$CMP DIODE
-D Diode simple
-K DEV DIODE
+$CMP NPN
+F transistors/bipolar/*.*
 $ENDCMP
 #
 $CMP R
 D Resistance
 K R DEV
+$ENDCMP
+#
+$CMP ZENER
+D Diode zener
+K DEV DIODE
 $ENDCMP
 #
 #End Doc Library

@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date 16/10/2009 00:28:20
-LIBS:power,L:/Projects/Electronics/Library/Atmega8,device,conn,linear,regul,74xx,cmos4000,adc-dac,memory,xilinx,special,microcontrollers,dsp,microchip,analog_switches,motorola,texas,intel,audio,interface,digital-audio,philips,display,cypress,siliconi,contrib,valves,.\t2usb.cache
+EESchema Schematic File Version 2  date 20/10/2009 20:37:52
+LIBS:power,L:/Projects/Electronics/Library/isp-12,regul,L:/Projects/Electronics/Library/IO_warrior,L:/Projects/Electronics/Library/Atmega8,conn,device,.\t2usb-tqfp.cache
 EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "15 oct 2009"
+Date "17 oct 2009"
 Rev ""
 Comp ""
 Comment1 ""
@@ -13,6 +13,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 9600 2450
+Wire Wire Line
+	9600 2450 9600 2500
+Wire Wire Line
+	4500 3250 3550 3250
+Connection ~ 5000 3250
+Connection ~ 4500 3250
+Connection ~ 4450 3150
+Connection ~ 3950 3150
 Connection ~ 7100 2350
 Connection ~ 6900 2350
 Connection ~ 6700 2350
@@ -47,9 +56,7 @@ Wire Wire Line
 Wire Wire Line
 	5250 3350 5250 3250
 Wire Wire Line
-	5600 3150 3650 3150
-Wire Wire Line
-	3650 3150 3650 2900
+	3650 2900 3650 3150
 Wire Wire Line
 	3650 2900 3050 2900
 Wire Wire Line
@@ -83,8 +90,6 @@ Wire Wire Line
 Wire Wire Line
 	3550 3000 3550 3250
 Wire Wire Line
-	3550 3250 5600 3250
-Wire Wire Line
 	9300 2150 9300 2450
 Wire Wire Line
 	9300 2450 10100 2450
@@ -113,6 +118,28 @@ Wire Wire Line
 Wire Wire Line
 	5000 2500 5000 2350
 Connection ~ 5000 2350
+Wire Wire Line
+	5600 3250 5000 3250
+Wire Wire Line
+	3650 3150 5600 3150
+$Comp
+L ISP-12 P3
+U 1 1 4AD97995
+P 9000 3700
+F 0 "P3" H 9000 3950 50  0000 C CNN
+F 1 "ISP-12" V 9000 3750 40  0000 C CNN
+	1    9000 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R5
+U 1 1 4AD877F5
+P 4750 3250
+F 0 "R5" V 4830 3250 50  0000 C CNN
+F 1 "0" V 4750 3250 50  0000 C CNN
+	1    4750 3250
+	0    1    1    0   
+$EndComp
 $Comp
 L GND #PWR01
 U 1 1 4AD73DB7
@@ -125,10 +152,10 @@ $EndComp
 $Comp
 L GND #PWR02
 U 1 1 4AD73CBD
-P 9600 2450
-F 0 "#PWR02" H 9600 2450 30  0001 C CNN
-F 1 "GND" H 9600 2380 30  0001 C CNN
-	1    9600 2450
+P 9600 2500
+F 0 "#PWR02" H 9600 2500 30  0001 C CNN
+F 1 "GND" H 9600 2430 30  0001 C CNN
+	1    9600 2500
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -250,15 +277,6 @@ F 0 "Q1" H 9550 1950 50  0000 C CNN
 F 1 "BC547" H 9302 2100 50  0000 C CNN
 	1    9400 1950
 	-1   0    0    -1  
-$EndComp
-$Comp
-L CONN_3X2 P3
-U 1 1 4AC9BF37
-P 9000 3700
-F 0 "P3" H 9000 3950 50  0000 C CNN
-F 1 "ISP" V 9000 3750 40  0000 C CNN
-	1    9000 3700
-	1    0    0    -1  
 $EndComp
 $Comp
 L R R3
