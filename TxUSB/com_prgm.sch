@@ -1,11 +1,11 @@
-EESchema Schematic File Version 2  date 14/10/2009 20:59:48
-LIBS:power,conn,device
-EELAYER 43  0
+EESchema Schematic File Version 2  date 18/10/2009 16:31:04
+LIBS:power,L:/Projects/Electronics/Library/isp-12,conn,device,.\com_prgm.cache
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
 Sheet 1 1
 Title ""
-Date "14 oct 2009"
+Date "17 oct 2009"
 Rev ""
 Comp ""
 Comment1 ""
@@ -14,116 +14,219 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	2850 3150 4700 3150
+	5350 4000 6450 4000
+Connection ~ 4350 4100
 Wire Wire Line
-	2350 3450 4800 3450
+	4350 4100 4050 4100
 Wire Wire Line
-	4800 3450 4800 3300
+	4050 4100 4050 4200
 Wire Wire Line
-	2850 3300 2850 3250
+	4850 4000 4150 4000
 Wire Wire Line
-	2850 3250 2350 3250
+	6450 4200 4850 4200
 Wire Wire Line
-	2850 3050 2350 3050
+	4850 4200 4850 4500
 Wire Wire Line
-	2350 2950 2850 2950
+	4850 4900 6300 4900
 Wire Wire Line
-	2850 2950 2850 2800
+	4550 4700 4350 4700
 Wire Wire Line
-	4700 3150 4700 2800
+	4150 4000 4150 3050
 Wire Wire Line
-	4700 2800 4800 2800
+	5500 4500 5500 4000
+Wire Wire Line
+	5850 3600 5850 4500
+Wire Wire Line
+	4250 3050 4250 3800
+Wire Wire Line
+	4250 3800 6450 3800
+Connection ~ 6300 3900
+Wire Wire Line
+	6300 3900 6450 3900
+Connection ~ 6300 4500
+Wire Wire Line
+	6300 4500 6450 4500
+Connection ~ 6300 4300
+Wire Wire Line
+	6300 4300 6450 4300
+Connection ~ 4450 3300
+Wire Wire Line
+	4450 3300 4650 3300
+Wire Wire Line
+	4650 3300 4650 3050
+Wire Wire Line
+	5350 3600 6450 3600
+Wire Wire Line
+	4450 3050 4450 3600
+Wire Wire Line
+	3950 3050 3950 3150
+Wire Wire Line
+	6450 3500 6300 3500
+Wire Wire Line
+	6300 3500 6300 4900
+Wire Wire Line
+	6300 4400 6450 4400
+Connection ~ 6300 4400
+Wire Wire Line
+	6300 4100 6450 4100
+Connection ~ 6300 4100
+Wire Wire Line
+	6300 3700 6450 3700
+Connection ~ 6300 3700
+Connection ~ 5850 3600
+Connection ~ 5500 4000
+Wire Wire Line
+	4350 4200 4350 3050
+Wire Wire Line
+	5500 4900 5500 5050
+Connection ~ 5500 4900
+Wire Wire Line
+	4450 3600 4850 3600
+Wire Wire Line
+	4050 5100 4050 5150
+Wire Wire Line
+	4350 4700 4350 5400
+Connection ~ 5850 4900
+Connection ~ 4050 5100
+Connection ~ 4850 4900
+Connection ~ 4850 4500
 $Comp
-L R R?
-U 1 1 4AD5CA52
-P 2600 3150
-F 0 "R?" V 2680 3150 50  0000 C CNN
-F 1 "R" V 2600 3150 50  0000 C CNN
-	1    2600 3150
-	0    1    1    0   
-$EndComp
-$Comp
-L DIODE D?
-U 1 1 4AD5C9A5
-P 3050 2800
-F 0 "D?" H 3050 2900 40  0000 C CNN
-F 1 "DIODE" H 3050 2700 40  0000 C CNN
-	1    3050 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 4AD5C9A4
-P 3500 2800
-F 0 "R?" V 3580 2800 50  0000 C CNN
-F 1 "R" V 3500 2800 50  0000 C CNN
-	1    3500 2800
-	0    1    1    0   
-$EndComp
-$Comp
-L DIODE D?
-U 1 1 4AD5C986
-P 3050 3050
-F 0 "D?" H 3050 3150 40  0000 C CNN
-F 1 "DIODE" H 3050 2950 40  0000 C CNN
-	1    3050 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 4AD5C985
-P 3500 3050
-F 0 "R?" V 3580 3050 50  0000 C CNN
-F 1 "R" V 3500 3050 50  0000 C CNN
-	1    3500 3050
-	0    1    1    0   
-$EndComp
-$Comp
-L DIODE D?
-U 1 1 4AD5C92A
-P 3050 3300
-F 0 "D?" H 3050 3400 40  0000 C CNN
-F 1 "DIODE" H 3050 3200 40  0000 C CNN
-	1    3050 3300
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 4AD5C8FA
-P 3500 3300
-F 0 "R?" V 3580 3300 50  0000 C CNN
-F 1 "R" V 3500 3300 50  0000 C CNN
-	1    3500 3300
-	0    1    1    0   
-$EndComp
-Text Notes 5300 3350 0    60   ~ 0
-GND
-Text Notes 5300 3250 0    60   ~ 0
-RESET
-Text Notes 5300 3150 0    60   ~ 0
-MOSI
-Text Notes 5300 3050 0    60   ~ 0
-SCK
-Text Notes 5300 2950 0    60   ~ 0
-VCC
-Text Notes 5300 2850 0    60   ~ 0
-MISO
-$Comp
-L CONN_6 P?
-U 1 1 4AD5C898
-P 5150 3050
-F 0 "P?" V 5100 3050 60  0000 C CNN
-F 1 "CONN_6" V 5200 3050 60  0000 C CNN
-	1    5150 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L DB9 J?
-U 1 1 4AD5C86E
-P 1900 3050
-F 0 "J?" H 1900 3600 70  0000 C CNN
-F 1 "DB9" H 1900 2500 70  0000 C CNN
-	1    1900 3050
+L R R6
+U 1 1 4AD9D9BE
+P 4850 5150
+F 0 "R6" V 4930 5150 50  0000 C CNN
+F 1 "4K7" V 4850 5150 50  0000 C CNN
+	1    4850 5150
 	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 4AD9D047
+P 4050 5150
+F 0 "#PWR01" H 4050 5150 30  0001 C CNN
+F 1 "GND" H 4050 5080 30  0001 C CNN
+	1    4050 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER D1
+U 1 1 4AD9D03F
+P 4050 4900
+F 0 "D1" H 4050 5000 50  0000 C CNN
+F 1 "5V1" H 4050 4800 40  0000 C CNN
+	1    4050 4900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R1
+U 1 1 4AD9D034
+P 4050 4450
+F 0 "R1" V 4130 4450 50  0000 C CNN
+F 1 "4K7" V 4050 4450 50  0000 C CNN
+	1    4050 4450
+	-1   0    0    1   
+$EndComp
+NoConn ~ 6450 3400
+$Comp
+L GND #PWR02
+U 1 1 4AD9CE2C
+P 5500 5050
+F 0 "#PWR02" H 5500 5050 30  0001 C CNN
+F 1 "GND" H 5500 4980 30  0001 C CNN
+	1    5500 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L NPN Q1
+U 1 1 4AD9CE0B
+P 4750 4700
+F 0 "Q1" H 4900 4700 50  0000 C CNN
+F 1 "BC547" H 4652 4850 50  0000 C CNN
+	1    4750 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER D3
+U 1 1 4AD9CB74
+P 5850 4700
+F 0 "D3" H 5850 4800 50  0000 C CNN
+F 1 "5V1" H 5850 4600 40  0000 C CNN
+	1    5850 4700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L ZENER D2
+U 1 1 4AD9CB69
+P 5500 4700
+F 0 "D2" H 5500 4800 50  0000 C CNN
+F 1 "5V1" H 5500 4600 40  0000 C CNN
+	1    5500 4700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR03
+U 1 1 4AD9CAD8
+P 3950 3150
+F 0 "#PWR03" H 3950 3150 30  0001 C CNN
+F 1 "GND" H 3950 3080 30  0001 C CNN
+	1    3950 3150
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4050 3050
+NoConn ~ 4550 3050
+NoConn ~ 4750 3050
+$Comp
+L R R2
+U 1 1 4AD9B836
+P 4350 4450
+F 0 "R2" V 4430 4450 50  0000 C CNN
+F 1 "10K" V 4350 4450 50  0000 C CNN
+	1    4350 4450
+	-1   0    0    1   
+$EndComp
+$Comp
+L ISP-12PIN P1
+U 1 1 4AD9B64F
+P 7300 3900
+F 0 "P1" H 7000 4600 60  0000 C CNN
+F 1 "ISP-12PIN" V 7200 3850 60  0000 C CNN
+	1    7300 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R5
+U 1 1 4AD5CA52
+P 5100 4000
+F 0 "R5" V 5180 4000 50  0000 C CNN
+F 1 "4K7" V 5100 4000 50  0000 C CNN
+	1    5100 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L R R3
+U 1 1 4AD5C9A4
+P 4600 5400
+F 0 "R3" V 4680 5400 50  0000 C CNN
+F 1 "10K" V 4600 5400 50  0000 C CNN
+	1    4600 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 4AD5C8FA
+P 5100 3600
+F 0 "R4" V 5180 3600 50  0000 C CNN
+F 1 "4K7" V 5100 3600 50  0000 C CNN
+	1    5100 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L DB9 J1
+U 1 1 4AD5C86E
+P 4350 2600
+F 0 "J1" V 4600 2900 70  0000 C CNN
+F 1 "DB9" V 4600 2350 70  0000 C CNN
+	1    4350 2600
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC

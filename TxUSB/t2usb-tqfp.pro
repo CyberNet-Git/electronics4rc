@@ -1,5 +1,5 @@
-update=15/10/2009 23:52:02
-last_client=pcbnew
+update=17/10/2009 16:00:12
+last_client=eeschema
 [common]
 NetDir=
 [cvpcb]
@@ -56,3 +56,44 @@ LibName11=C:/Program Files/KiCAD/modules/discret
 LibName12=C:/Program Files/KiCAD/modules/connect
 LibName13=L:/Projects/Electronics/Library/vvpConnectors
 LibName14=L:/Projects/Electronics/Library/cc
+[eeschema]
+version=1
+LibDir=c:\\program files\\kicad\\library
+NetFmt=1
+HPGLSpd=20
+HPGLDm=15
+HPGLNum=1
+offX_A4=0
+offY_A4=0
+offX_A3=0
+offY_A3=0
+offX_A2=0
+offY_A2=0
+offX_A1=0
+offY_A1=0
+offX_A0=0
+offY_A0=0
+offX_A=0
+offY_A=0
+offX_B=0
+offY_B=0
+offX_C=0
+offY_C=0
+offX_D=0
+offY_D=0
+offX_E=0
+offY_E=0
+RptD_X=0
+RptD_Y=100
+RptLab=1
+SimCmd=
+UseNetN=0
+LabSize=60
+[eeschema/libraries]
+LibName1=power
+LibName2=L:/Projects/Electronics/Library/isp-12
+LibName3=regul
+LibName4=L:/Projects/Electronics/Library/IO_warrior
+LibName5=L:/Projects/Electronics/Library/Atmega8
+LibName6=conn
+LibName7=device

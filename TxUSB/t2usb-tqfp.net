@@ -1,117 +1,117 @@
-# EESchema Netlist Version 1.1 created  16/10/2009 00:36:05
+# EESchema Netlist Version 1.1 created  19/10/2009 21:38:32
 (
- ( /4AC9BB2E SM0603 C1 1.0
-  ( 1 N-000006 )
-  ( 2 GND )
+ ( /4AD97995 $noname  P3 ISP-12 {Lib=ISP-12}
+  (    1 N-000013 )
+  (    3 N-000002 )
+  (    5 N-000011 )
+  (    7 N-000012 )
+  (    9 N-000010 )
+  (   11 GND )
  )
- ( /4AC9BB33 HC-VB C2 4.7
-  ( 1 N-000013 )
-  ( 2 GND )
+ ( /4AD877F5 $noname  R5 0 {Lib=R}
+  (    1 N-000005 )
+  (    2 N-000008 )
  )
- ( /4AD73989 C2 C3 30pF
-  ( 1 N-000009 )
-  ( 2 GND )
+ ( /4AD7398C $noname  X1 ZTT-12MHz {Lib=CRYSTAL}
+  (    1 N-000009 )
+  (    2 N-000003 )
  )
- ( /4AD7398A C2 C4 30pF
-  ( 1 N-000004 )
-  ( 2 GND )
+ ( /4AD7398A $noname  C4 30pF {Lib=C}
+  (    1 N-000003 )
+  (    2 GND )
  )
- ( /4AD73912 TQFP32 I1 ATMEGA8
-  ( 1 ? )
-  ( 2 ? )
-  ( 3 GND )
-  ( 4 N-000013 )
-  ( 5 GND )
-  ( 6 N-000013 )
-  ( 7 N-000009 )
-  ( 8 N-000004 )
-  ( 9 ? )
-  ( 10 ? )
-  ( 11 ? )
-  ( 12 N-000005 )
-  ( 13 ? )
-  ( 14 ? )
-  ( 15 N-000012 )
-  ( 16 N-000011 )
-  ( 17 N-000003 )
-  ( 18 N-000013 )
-  ( 19 ? )
-  ( 20 N-000013 )
-  ( 21 GND )
-  ( 22 ? )
-  ( 23 ? )
-  ( 24 ? )
-  ( 25 ? )
-  ( 26 ? )
-  ( 27 ? )
-  ( 28 ? )
-  ( 29 N-000010 )
-  ( 30 N-000001 )
-  ( 31 N-000007 )
-  ( 32 N-000007 )
+ ( /4AD73989 $noname  C3 30pF {Lib=C}
+  (    1 N-000009 )
+  (    2 GND )
  )
- ( /4AC9C13A SIL-2 P1 TX
-  ( 1 N-000029 )
-  ( 2 N-000008 )
+ ( /4AD73912 $noname  I1 ATMEGA8 {Lib=ATMEGA8}
+  (    1 ? )
+  (    2 ? )
+  (    3 GND )
+  (    4 N-000013 )
+  (    5 GND )
+  (    6 N-000013 )
+  (    7 N-000009 )
+  (    8 N-000003 )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 N-000004 )
+  (   13 ? )
+  (   14 ? )
+  (   15 N-000012 )
+  (   16 N-000011 )
+  (   17 N-000002 )
+  (   18 N-000013 )
+  (   19 ? )
+  (   20 N-000013 )
+  (   21 GND )
+  (   22 ? )
+  (   23 ? )
+  (   24 ? )
+  (   25 ? )
+  (   26 ? )
+  (   27 ? )
+  (   28 ? )
+  (   29 N-000010 )
+  (   30 N-000006 )
+  (   31 N-000005 )
+  (   32 N-000005 )
  )
- ( /4AC9BAC3 USB_A P2 USB
-  ( 1 N-000006 )
-  ( 2 N-000001 )
-  ( 3 N-000007 )
-  ( 4 GND )
+ ( /4AC9CF05 $noname  Q2 LP2950CZ-3.3 {Lib=LT1585CM}
+  (    1 GND )
+  (    2 N-000013 )
+  (    3 N-000007 )
  )
- ( /4AC9BF37 pin_array_3x2 P3 ISP
-  ( 1 N-000011 )
-  ( 2 N-000013 )
-  ( 3 N-000003 )
-  ( 4 N-000012 )
-  ( 5 N-000010 )
-  ( 6 GND )
+ ( /4AC9C13A $noname  P1 TX {Lib=CONN_2}
+  (    1 N-000029 )
+  (    2 GND )
  )
- ( /4AC9C03F TO92H Q1 BC547
-  ( 1 N-000008 )
-  ( 2 N-000030 )
-  ( 3 N-000005 )
+ ( /4AC9C0B9 $noname  R1 10k {Lib=R}
+  (    1 N-000030 )
+  (    2 N-000029 )
  )
- ( /4AC9CF05 TO92H Q2 LP2950CZ-3.3
-  ( 1 GND )
-  ( 2 N-000013 )
-  ( 3 N-000006 )
+ ( /4AC9C052 $noname  R2 200k {Lib=R}
+  (    1 N-000030 )
+  (    2 GND )
  )
- ( /4AC9C0B9 SM0805 R1 10k
-  ( 1 N-000030 )
-  ( 2 N-000029 )
+ ( /4AC9C03F $noname  Q1 BC547 {Lib=NPN}
+  (    1 GND )
+  (    2 N-000030 )
+  (    3 N-000004 )
  )
- ( /4AC9C052 SM0805 R2 200k
-  ( 1 N-000030 )
-  ( 2 GND )
+ ( /4AC9BD07 $noname  R3 1.5k {Lib=R}
+  (    1 N-000013 )
+  (    2 N-000006 )
  )
- ( /4AC9BD07 SM0805 R3 1.5k
-  ( 1 N-000013 )
-  ( 2 N-000001 )
+ ( /4AC9BB33 $noname  C2 4.7 {Lib=CP}
+  (    1 N-000013 )
+  (    2 GND )
  )
- ( /4AD7398C QUARZ X1 ZTT-12MHz
-  ( 1 N-000009 )
-  ( 2 N-000004 )
+ ( /4AC9BB2E $noname  C1 1.0 {Lib=C}
+  (    1 N-000007 )
+  (    2 GND )
+ )
+ ( /4AC9BAC3 $noname  P2 USB {Lib=CONN_4}
+  (    1 N-000007 )
+  (    2 N-000006 )
+  (    3 N-000008 )
+  (    4 GND )
  )
 )
 *
 { Allowed footprints by component:
-$component C1
- SM*
- C?
- C1-1
-$endlist
-$component C2
- CP*
- SM*
-$endlist
-$component C3
- SM*
- C?
- C1-1
+$component R5
+ R?
+ SM0603
+ SM0805
 $endlist
 $component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
  SM*
  C?
  C1-1
@@ -131,5 +131,85 @@ $component R3
  SM0603
  SM0805
 $endlist
+$component C2
+ CP*
+ SM*
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
 $endfootprintlist
 }
+{ Pin List by Nets
+Net 1 "GND" "GND"
+ P2 4
+ C1 2
+ C2 2
+ Q1 1
+ R2 2
+ P1 2
+ Q2 1
+ I1 21
+ I1 5
+ I1 3
+ C3 2
+ C4 2
+ P3 11
+Net 2 "" ""
+ P3 3
+ I1 17
+Net 3 "" ""
+ C4 1
+ I1 8
+ X1 2
+Net 4 "" ""
+ I1 12
+ Q1 3
+Net 5 "" ""
+ R5 1
+ I1 32
+ I1 31
+Net 6 "" ""
+ I1 30
+ R3 2
+ P2 2
+Net 7 "" ""
+ P2 1
+ Q2 3
+ C1 1
+Net 8 "" ""
+ P2 3
+ R5 2
+Net 9 "" ""
+ X1 1
+ I1 7
+ C3 1
+Net 10 "" ""
+ P3 9
+ I1 29
+Net 11 "" ""
+ P3 5
+ I1 16
+Net 12 "" ""
+ I1 15
+ P3 7
+Net 13 "" ""
+ C2 1
+ I1 20
+ R3 1
+ I1 6
+ I1 4
+ P3 1
+ I1 18
+ Q2 2
+Net 29 "" ""
+ R1 2
+ P1 1
+Net 30 "" ""
+ R1 1
+ R2 1
+ Q1 2
+}
+#End
