@@ -1,0 +1,185 @@
+# EESchema Netlist Version 1.1 created  11.02.2011 21:38:09
+(
+ ( /4AD9D9BE $noname  R6 4K7 {Lib=R}
+  (    1 N-000014 )
+  (    2 GND )
+ )
+ ( /4AD9D03F $noname  D1 5V1 {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000009 )
+ )
+ ( /4AD9D034 $noname  R1 4K7 {Lib=R}
+  (    1 N-000009 )
+  (    2 N-000008 )
+ )
+ ( /4AD9CE0B $noname  Q1 BC547 {Lib=NPN}
+  (    1 GND )
+  (    2 N-000013 )
+  (    3 N-000007 )
+ )
+ ( /4AD9CB74 $noname  D3 5V1 {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000006 )
+ )
+ ( /4AD9CB69 $noname  D2 5V1 {Lib=ZENER}
+  (    1 GND )
+  (    2 N-000005 )
+ )
+ ( /4AD9B836 $noname  R2 10K {Lib=R}
+  (    1 N-000013 )
+  (    2 N-000008 )
+ )
+ ( /4AD9B64F $noname  P1 ISP-12PIN {Lib=ISP-12PIN}
+  (    1 ? )
+  (    2 GND )
+  (    3 N-000006 )
+  (    4 GND )
+  (    5 N-000015 )
+  (    6 GND )
+  (    7 N-000005 )
+  (    8 GND )
+  (    9 N-000007 )
+  (   10 GND )
+  (   11 GND )
+  (   12 GND )
+ )
+ ( /4AD5CA52 $noname  R5 4K7 {Lib=R}
+  (    1 N-000005 )
+  (    2 N-000011 )
+ )
+ ( /4AD5C9A4 $noname  R3 10K {Lib=R}
+  (    1 N-000014 )
+  (    2 N-000013 )
+ )
+ ( /4AD5C8FA $noname  R4 4K7 {Lib=R}
+  (    1 N-000006 )
+  (    2 N-000012 )
+ )
+ ( /4AD5C86E $noname  J1 DB9 {Lib=DB9}
+  (    1 ? )
+  (    2 ? )
+  (    3 N-000008 )
+  (    4 N-000011 )
+  (    5 GND )
+  (    6 N-000012 )
+  (    7 N-000012 )
+  (    8 N-000015 )
+  (    9 ? )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D1
+ D?
+ SO*
+ SM*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component D3
+ D?
+ SO*
+ SM*
+$endlist
+$component D2
+ D?
+ SO*
+ SM*
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component J1
+ DB9*
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 5 "" ""
+ R5 1
+ P1 7
+ D2 2
+Net 6 "" ""
+ P1 3
+ D3 2
+ R4 1
+Net 7 "" ""
+ Q1 3
+ P1 9
+Net 8 "" ""
+ J1 3
+ R1 2
+ R2 2
+Net 9 "" ""
+ D1 2
+ R1 1
+Net 10 "GND" "GND"
+ R6 2
+ D1 1
+ P1 12
+ P1 11
+ P1 10
+ P1 8
+ P1 6
+ Q1 1
+ P1 4
+ D3 1
+ D2 1
+ P1 2
+ J1 5
+Net 11 "" ""
+ J1 4
+ R5 2
+Net 12 "" ""
+ J1 7
+ J1 6
+ R4 2
+Net 13 "" ""
+ R3 2
+ Q1 2
+ R2 1
+Net 14 "" ""
+ R6 1
+ R3 1
+Net 15 "" ""
+ J1 8
+ P1 5
+}
+#End
