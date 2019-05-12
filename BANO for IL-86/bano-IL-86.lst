@@ -1,0 +1,29 @@
+eeschema (2012-01-19 BZR 3256)-stable  >> Creation date: 02.02.2013 17:26:51
+
+#Cmp ( порядок = Обозначение )
+| C1         CP          
+| C2         CP          
+| P1         CONN_2      
+| P3         CONN_2      
+| Q1         NPN         
+| Q2         NPN         
+| R1         R           
+| R2         R           
+| R3         R           
+| R4         R           
+#End Cmp
+
+#Cmp ( порядок = Значение )
+| CONN_2       P1        
+| CONN_2       P3        
+| CP           C1        
+| CP           C2        
+| NPN          Q1        
+| NPN          Q2        
+| R            R1        
+| R            R2        
+| R            R3        
+| R            R4        
+#End Cmp
+
+#End List

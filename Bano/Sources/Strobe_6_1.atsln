@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Strobe", "Strobe_6_1.cproj", "{8ADD6A7C-0790-4B2C-94A4-2D03BE194E3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ADD6A7C-0790-4B2C-94A4-2D03BE194E3E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{8ADD6A7C-0790-4B2C-94A4-2D03BE194E3E}.Debug|AVR.Build.0 = Debug|AVR
+		{8ADD6A7C-0790-4B2C-94A4-2D03BE194E3E}.Release|AVR.ActiveCfg = Release|AVR
+		{8ADD6A7C-0790-4B2C-94A4-2D03BE194E3E}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

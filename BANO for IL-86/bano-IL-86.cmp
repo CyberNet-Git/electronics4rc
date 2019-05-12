@@ -1,0 +1,73 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 02.02.2013 17:26:58
+
+BeginCmp
+TimeStamp = /510CBAB1;
+Reference = C1;
+ValeurCmp = CP;
+IdModule  = SM1206POL;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CBAB7;
+Reference = C2;
+ValeurCmp = CP;
+IdModule  = SM1206POL;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CDB4E;
+Reference = P1;
+ValeurCmp = CONN_2;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CD2D0;
+Reference = P3;
+ValeurCmp = CONN_2;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CBA8B;
+Reference = Q1;
+ValeurCmp = NPN;
+IdModule  = DPAK2;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CBA93;
+Reference = Q2;
+ValeurCmp = NPN;
+IdModule  = DPAK2;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CBB21;
+Reference = R1;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CBAC0;
+Reference = R2;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CBACB;
+Reference = R3;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /510CBB24;
+Reference = R4;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+EndListe

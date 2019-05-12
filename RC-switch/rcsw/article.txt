@@ -1,0 +1,115 @@
+RADIO CONTROL SWITCH UNIT
+By Ken Hewitt
+
+Originally published in the January 1996 issue of
+Radio Control Models and Electronics
+
+
+Introduction
+
+The switch unit to be described in this article can be used for
+switching on and off any electrical system you wish, it could be
+an onboard glow plug driver, landing lights, airborne sound
+system or even a rocket motor to assist take off.
+
+It was inspired by a request from someone on the internet
+looking for circuits for an RC switch unit, the responses that
+he got fell into two basic designs. The first design type used a
+system where the output pulse from the receiver was converted
+into a voltage, and this voltage was then compared to a
+reference voltage, this is a very simple technique which only
+needs one IC to implement it, but has a draw back in that it
+suffers from a large amount of hysteresis, this is the
+difference between the switch on point and the switch off point.
+
+The second design type used a technique to compare the receiver
+output pulse width, with a reference pulse. This did not suffer
+from the hysteresis problem, but most of the designs used two
+different digital logic ICs but only used half of each one,
+resulting in a larger more bulky unit
+
+It was decided to see if a design could be developed which used
+the second technique, but used only one IC, the result is the
+design presented here in this article.
+
+
+The Technical bit
+
+The circuit is based around a CMOS digital logic IC, which is a
+4013 dual 'D' type flip flop. The first half of this IC is made
+to operate as a monostable pulse generator by the action of R1,
+RV1 and C1 connected between the 'Q' output and the reset input.
+This monostable produces a pulse of preset length set by RV1
+which starts with the rising edge of the input pulse. When this
+monostable times out it's inverted 'Q' output will go high, this
+transition will clock the second half of IC1, which is used as a
+normal 'D' type flip flop, this will sample the input pulse. If
+the input pulse is of longer duration than the preset monostable
+pulse, then a logic high level will be clocked to the output of
+the 'D' type. But if the input pulse is shorter than the preset
+pulse, then a logic low will be clocked to the output. With this
+configuration we are using both halves of this IC to perform two
+different logic functions. 
+
+The output 'D' type flip flop is used to drive the output device
+which is a logic level drive MOS-FET, this device only needs
+4.5v on it's gate to be fully turned on, and have an ON
+resistance of only 0.055 of an ohm. A side effect of this
+technique is that depending which output of the second flip flop
+we use, we can invert the operation of the switch, this is
+accomplished by connecting R3 to either pin 13 or pin 12 of IC1.
+
+
+Construction
+
+The unit is very simple in design and so is fairly easy to
+build. Cut the veroboard to size first and check it is a snug
+fit in the case. Then cut the copper tracks in the positions
+shown in the drawing of the track side of the board. Now you can
+fit the components making sure to fit the two wire links that
+are under IC1, and shown in the component layout as dotted
+lines. Also make sure that you link pins 6 and 7 on the
+trackside of the board. Once completed the board should be
+fitted into the case which has been modified as per the drawing.
+
+
+Setting and Use
+
+Once the unit is connected to the system that you want to
+switch, set the pot RV1 to its mid position and then set the
+transmitter function to the point you want the switching to take
+place, then adjust the pot RV1 so that the unit switches on. If
+used to switch something like a glow plug then the plug can be
+switched directly. But if you want to switch something like a
+relay or motor then you will need to fit a diode (1N4001) across
+the relay or motor as shown in the circuit diagrams.
+
+If you are going to use this unit as a glow driver then it will
+need to be connected to the throttle servo with a 'Y' lead, also
+make sure that you use fairly heavy wire to connect the plug and
+the ni-cad to the switch unit. 
+
+This unit is not meant to be used as a motor switch for electric
+flight, but if the output stage was beefed up a bit with some
+extra FET's it would make a reasonable starting point.
+
+
+Parts List
+
+C1              22nF
+
+R1              47k
+R2              10k
+R3              1k
+RV1             100k
+
+IC1             CD4013
+
+Q1              BUK555-60B
+
+Servo Lead	Available from local model shop	
+
+
+Author
+
+See web page under ordering parts.
