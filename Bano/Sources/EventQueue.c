@@ -117,12 +117,95 @@ void runEventQueue()
 	}	
 }
 
+volatile uint8_t ppmEnabled = 0;
+
 ISR(TIM0_OVF_vect)
 {
 	// Update the PWM values
-	OCR0A = pwmAValue;
+	if(ppmEnabled) OCR0A = pwmAValue;
 	//OCR1B = pwmBValue;
 	
 	// Increment high byte of the HW counter
 	tcnth++;
+}
+
+
+uint16_t ppmPulseStartTime;
+uint8_t ppmInputPin;
+
+#define LED_C_PIN		PORTB2
+#define LED_B_PIN		PORTB1
+
+#define PWM_THRESHOLD_0	900	 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
+#define PWM_THRESHOLD_1	1200 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
+
+inline void setupPPMInput()
+{
+	// Initialize the timestamp value
+	ppmPulseStartTime = 0;
+
+	// Attiny13
+	PCMSK = 1 << ppmInputPin;  // Use PCINT3 pin as input
+	GIMSK |= 1 << PCIE; // Enable Pin Change interrupt
+	
+	// Atmega8
+	//MCUCR = 1<<ISC00; // Any logical change on INT0 generates an interrupt request.
+	//GICR = 1<<INT0;   // External Interrupt Request 0 Enable For Atmega8
+}
+
+ISR(PCINT0_vect)
+{
+	/*
+	// Get the current time stamp
+	uint16_t curTime = (tcnth << 8) + TCNT0;
+	*/
+
+	// gcc generates plenty of code when constructing 16 bit value from 2 bytes. Let's do it ourselves	
+	union
+	{
+		struct
+		{
+			uint8_t l;
+			uint8_t h;
+		};
+		uint16_t val;
+	} curTime;
+	
+	// Get the current time stamp
+	curTime.h = tcnth;
+	curTime.l = TCNT0;
+
+	// It may happen that Pin Change Interrupt occurs at the same time as timer overflow
+	// Since timer overflow interrupt has lower priority let's do its work here (increment tcnth)
+	if(TIFR0 & (1 << TOV0))
+	{
+		curTime.h = tcnth+1;
+		curTime.l = TCNT0;
+	}
+	
+	
+	//ATtiny13 if(PINB & (1 << PWM_INPUT_PIN)) // On raising edge just capture current timer value
+	if(PINB & (1 << ppmInputPin)) // On raising edge just capture current timer value
+	{
+		ppmPulseStartTime = curTime.val;
+	}
+	else // On failing edge calculate pulse length and turn on/off LED depending on time
+	{
+		uint16_t pulseLen = curTime.val - ppmPulseStartTime;
+		
+		if(pulseLen >= PWM_THRESHOLD_0){
+			ppmEnabled = 1;
+			TCCR0A = 0 << COM0A1 | 0 << COM0A0 | 1 << WGM01 | 1 << WGM00;
+		}
+		else	{
+			ppmEnabled = 0;
+			TCCR0A = 1 << COM0A1 | 1 << COM0A0 | 1 << WGM01 | 1 << WGM00;
+		}
+
+/*		if(pulseLen >= PWM_THRESHOLD_0)
+			PORTB |= (1 << LED_B_PIN);
+		else
+			PORTB &= ~(1 << LED_B_PIN);
+*/
+	}
 }

@@ -16,6 +16,8 @@
 	typedef void (*eventHandler)();
 
 	void setupEventQueue();
+	void setupPPMInput();
+
 	void addTimer(eventHandler handler, uint16_t timeout);
 	void runEventQueue();
 

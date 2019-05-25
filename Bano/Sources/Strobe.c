@@ -18,7 +18,7 @@
 #define LED_A_PIN		PORTB0
 #define LED_B_PIN		PORTB1
 #define LED_C_PIN		PORTB2
-#define PWM_INPUT_PIN	PCINT3
+#define PPM_INPUT_PIN	PCINT3
 
 #define LED_A			LED_A_PIN
 #define LED_B			LED_B_PIN
@@ -198,20 +198,19 @@ uint8_t pwmStep = 0;
 
 void complexPWMTask()
 {
-	//complexPWM * curItem = pwmItems + pwmTableIndex;
 	if (pwmTableIndex == 0xFF) { // first start
 		pwmTableSize = eeprom_read_byte(&pwmTableSizeE);
-//		pwmTableSize = 2;
 		pwmTableIndex = 0;
 		pwmStep = 0;
 		if (pwmTableSize > 0)
 		{
 			eeprom_read_block(&pwmItem, &pwmItems[pwmTableIndex], sizeof(complexPWM));
-//		PORTB ^= (1 << LED_B_PIN);
 		} else { return; }
 	}
 	
 	pwmAValue = (pwmItem.k * pwmStep) / 100 + pwmItem.baseValue;
+	pwmBValue = pwmAValue;
+	
 	pwmStep++;
 	
 	if(pwmStep == pwmItem.Steps ) {
@@ -228,82 +227,17 @@ void complexPWMTask()
 }
 
 
-uint16_t pwmPulseStartTime;
-extern volatile uint8_t tcnth;
-
-void setupPWMInput()
-{
-	// Initialize the timestamp value
-	pwmPulseStartTime = 0;
-
-    // Attiny13
-	PCMSK = 1 << PWM_INPUT_PIN;  // Use PCINT3 pin as input
-	GIMSK |= 1 << PCIE; // Enable Pin Change interrupt
-	
-	// Atmega8 
-	//MCUCR = 1<<ISC00; // Any logical change on INT0 generates an interrupt request.
-	//GICR = 1<<INT0;   // External Interrupt Request 0 Enable For Atmega8
-}
+extern uint8_t ppmInputPin;
+extern uint8_t ppmEnabled;
 
 // Pin Change interrupt
-ISR(PCINT0_vect)
-{
-	/*
-	// Get the current time stamp
-	uint16_t curTime = (tcnth << 8) + TCNT0;
-	*/
-
-	// gcc generates plenty of code when constructing 16 bit value from 2 bytes. Let's do it ourselves	
-	union
-	{
-		struct
-		{
-			uint8_t l;
-			uint8_t h;
-		};
-		uint16_t val;
-	} curTime;
-	
-	// Get the current time stamp
-	curTime.h = tcnth;
-	curTime.l = TCNT0;
-
-	// It may happen that Pin Change Interrupt occurs at the same time as timer overflow
-	// Since timer overflow interrupt has lower priority let's do its work here (increment tcnth)
-	if(TIFR0 & (1 << TOV0))
-	{
-		curTime.h = tcnth+1;
-		curTime.l = TCNT0;
-	}
-	
-	
-	//ATtiny13 if(PINB & (1 << PWM_INPUT_PIN)) // On raising edge just capture current timer value
-	if(PINB & (1 << PWM_INPUT_PIN)) // On raising edge just capture current timer value
-	{
-		pwmPulseStartTime = curTime.val;
-	}
-	else // On failing edge calculate pulse length and turn on/off LED depending on time
-	{
-		uint16_t pulseLen = curTime.val - pwmPulseStartTime;
-		
-		if(pulseLen >= PWM_THRESHOLD_0)
-			PORTB |= (1 << LED_C_PIN);
-		else	
-			PORTB &= ~(1 << LED_C_PIN);
-
-		if(pulseLen >= PWM_THRESHOLD_1)
-			PORTB |= (1 << LED_C_PIN);
-		else
-			PORTB &= ~(1 << LED_C_PIN);
-	}
-}
 
 int main(void)
 {
 	// Set up ports
-	PORTB = 1 << PWM_INPUT_PIN | 1 << LED_A_PIN | 1 << LED_B_PIN | 0 << LED_C_PIN ; // LEDs switched off, pull-up for PCINT4
+	PORTB = 1 << PPM_INPUT_PIN | 0 << LED_A_PIN | 1 << LED_B_PIN | 0 << LED_C_PIN ; // LEDs switched off, pull-up for PCINT4
 	//PORTD = 1 << PWM_INPUT_PIN; // pull-up for INT0 for Atmega8
-	DDRB = 0 << PWM_INPUT_PIN | 1 << LED_A_PIN | 1 << LED_B_PIN | 1 << LED_C_PIN; // output mode for LED pins, input mode for PCINT4 pin
+	DDRB = 0 << PPM_INPUT_PIN | 1 << LED_A_PIN | 1 << LED_B_PIN | 1 << LED_C_PIN; // output mode for LED pins, input mode for PCINT4 pin
 	
 	
 	setupEventQueue();
@@ -318,7 +252,10 @@ int main(void)
 //	addTimer(strobeBTask, TIMEOUT_MS(0));
 	addTimer(complexPWMTask, TIMEOUT_MS(2));  // LED_A_PIN
 
-	setupPWMInput();
+	ppmInputPin = PPM_INPUT_PIN;
+	ppmEnabled = 1;
+	setupPPMInput();
+	
 	
 	sei();
 	
