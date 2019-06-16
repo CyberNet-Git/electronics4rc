@@ -15,22 +15,6 @@
 
 #include "EventQueue.h"
 
-#define LED_A_PIN		PORTB0
-#define LED_B_PIN		PORTB1
-#define LED_C_PIN		PORTB2
-#define PPM_INPUT_PIN	PCINT3
-
-#define LED_A			LED_A_PIN
-#define LED_B			LED_B_PIN
-#define LED_C			LED_C_PIN
-
-#define PWM_THRESHOLD_0	900	 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
-#define PWM_THRESHOLD_1	1200 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
-//#define PWM_THRESHOLD	750	 // Atmega8 at 4MHz:  number of pulses in 1500 uS at 4MHz with /8 prescailer = 1500 * 4 / 8 = 750
-
-#define LED_TOGGLE(LED)		PORTB ^= (1 << LED);
-#define LED_ON(LED)			PORTB |= (1 << LED);
-#define LED_OFF(LED)		PORTB &= (0xFF ^ (1 << LED));
 
 //unsigned char led_trigger = 1 << LED_A_PIN | 1 << LED_B_PIN | 1 << LED_C_PIN; // FOR XOR OP in toggle
 
@@ -52,7 +36,7 @@ void toggleLedCTask()
 {
 	PORTB ^= (1 << LED_C_PIN);
 	
-	addTimer(toggleLedCTask, TIMEOUT_MS(1000));
+	addTimer(toggleLedCTask, TIMEOUT_MS(2000));
 }
 
 uint8_t idx = 0;
@@ -228,14 +212,14 @@ void complexPWMTask()
 
 
 extern uint8_t ppmInputPin;
-extern uint8_t ppmEnabled;
+extern uint8_t pwmEnabled;
 
 // Pin Change interrupt
 
 int main(void)
 {
 	// Set up ports
-	PORTB = 1 << PPM_INPUT_PIN | 0 << LED_A_PIN | 1 << LED_B_PIN | 0 << LED_C_PIN ; // LEDs switched off, pull-up for PCINT4
+	PORTB = 1 << PPM_INPUT_PIN | 1 << LED_A_PIN | 1 << LED_B_PIN | 1 << LED_C_PIN ; // LEDs switched off, pull-up for PCINT4
 	//PORTD = 1 << PWM_INPUT_PIN; // pull-up for INT0 for Atmega8
 	DDRB = 0 << PPM_INPUT_PIN | 1 << LED_A_PIN | 1 << LED_B_PIN | 1 << LED_C_PIN; // output mode for LED pins, input mode for PCINT4 pin
 	
@@ -246,14 +230,15 @@ int main(void)
 //	addTimer(pwmLedBTask, TIMEOUT_MS(0));
 // 	addTimer(toggleLedATask, TIMEOUT_MS(0));
 // 	addTimer(toggleLedBTask, TIMEOUT_MS(0));
- //	addTimer(toggleLedCTask, TIMEOUT_MS(0));
+//	addTimer(toggleLedCTask, TIMEOUT_MS(0));
 
 
 //	addTimer(strobeBTask, TIMEOUT_MS(0));
+
 	addTimer(complexPWMTask, TIMEOUT_MS(2));  // LED_A_PIN
 
 	ppmInputPin = PPM_INPUT_PIN;
-	ppmEnabled = 1;
+	pwmEnabled = 1;
 	setupPPMInput();
 	
 	

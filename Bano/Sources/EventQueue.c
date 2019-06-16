@@ -30,7 +30,7 @@ volatile uint8_t tcnth;
 
 // Current PWM value
 volatile uint8_t pwmAValue = 0; // 255 = Off because of transistor inverter
-volatile uint8_t pwmBValue = 255;
+volatile uint8_t pwmBValue = 127;
 
 void setupEventQueue()
 {
@@ -117,13 +117,13 @@ void runEventQueue()
 	}	
 }
 
-volatile uint8_t ppmEnabled = 0;
+volatile uint8_t pwmEnabled = 0;
 
 ISR(TIM0_OVF_vect)
 {
 	// Update the PWM values
-	if(ppmEnabled) OCR0A = pwmAValue;
-	//OCR1B = pwmBValue;
+	if(pwmEnabled) OCR0A = pwmAValue;
+	if(pwmEnabled) OCR0B = pwmBValue;
 	
 	// Increment high byte of the HW counter
 	tcnth++;
@@ -136,8 +136,8 @@ uint8_t ppmInputPin;
 #define LED_C_PIN		PORTB2
 #define LED_B_PIN		PORTB1
 
-#define PWM_THRESHOLD_0	900	 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
-#define PWM_THRESHOLD_1	1200 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
+#define PPM_THRESHOLD_0	900	 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
+#define PPM_THRESHOLD_1	1200 // Attiny13 at 4.8 MHz: number of pulses in 1500 uS at 4.8MHz with /8 prescailer = 1500 * 4.8 / 8 = 900
 
 inline void setupPPMInput()
 {
@@ -192,20 +192,24 @@ ISR(PCINT0_vect)
 	else // On failing edge calculate pulse length and turn on/off LED depending on time
 	{
 		uint16_t pulseLen = curTime.val - ppmPulseStartTime;
-		
-		if(pulseLen >= PWM_THRESHOLD_0){
-			ppmEnabled = 1;
-			TCCR0A = 0 << COM0A1 | 0 << COM0A0 | 1 << WGM01 | 1 << WGM00;
-		}
-		else	{
-			ppmEnabled = 0;
-			TCCR0A = 1 << COM0A1 | 1 << COM0A0 | 1 << WGM01 | 1 << WGM00;
+
+		if(pulseLen < PPM_THRESHOLD_1){
+			LED_OFF(LED_C);
 		}
 
-/*		if(pulseLen >= PWM_THRESHOLD_0)
-			PORTB |= (1 << LED_B_PIN);
-		else
-			PORTB &= ~(1 << LED_B_PIN);
-*/
+		if(pulseLen > PPM_THRESHOLD_2){
+			pwmEnabled = 1;
+			TCCR0A = 1 << COM0A1 | 1 << COM0A0 | 1 << WGM01 | 1 << WGM00;
+		}
+		else	{
+			pwmEnabled = 1;
+			TCCR0A = 0 << COM0A1 | 0 << COM0A0 | 1 << WGM01 | 1 << WGM00;
+		}
+
+		if(pulseLen > PPM_THRESHOLD_3){
+			LED_ON(LED_C);
+		}
+
+
 	}
 }
