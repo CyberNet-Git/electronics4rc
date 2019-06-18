@@ -139,7 +139,7 @@ U 1 1 5D077F92
 P 1500 2550
 F 0 "J1" H 1418 2867 50  0000 C CNN
 F 1 "Conn_01x03" H 1418 2776 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 1500 2550 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 1500 2550 50  0001 C CNN
 F 3 "~" H 1500 2550 50  0001 C CNN
 	1    1500 2550
 	-1   0    0    -1  
@@ -212,7 +212,7 @@ U 1 1 5D087FF3
 P 6850 2350
 F 0 "J2" H 6930 2342 50  0000 L CNN
 F 1 "Conn_01x02" H 6930 2251 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 6850 2350 50  0001 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 6850 2350 50  0001 C CNN
 F 3 "~" H 6850 2350 50  0001 C CNN
 	1    6850 2350
 	1    0    0    -1  
@@ -223,7 +223,7 @@ U 1 1 5D089D35
 P 6850 2700
 F 0 "J3" H 6930 2692 50  0000 L CNN
 F 1 "Conn_01x02" H 6930 2601 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 6850 2700 50  0001 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 6850 2700 50  0001 C CNN
 F 3 "~" H 6850 2700 50  0001 C CNN
 	1    6850 2700
 	1    0    0    -1  
@@ -234,7 +234,7 @@ U 1 1 5D08A450
 P 6850 3000
 F 0 "J4" H 6930 2992 50  0000 L CNN
 F 1 "Conn_01x02" H 6930 2901 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 6850 3000 50  0001 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 6850 3000 50  0001 C CNN
 F 3 "~" H 6850 3000 50  0001 C CNN
 	1    6850 3000
 	1    0    0    -1  
@@ -274,4 +274,10 @@ F 3 "~" H 5250 2800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5250 2950 5250 3150
+Text Label 6100 2350 0    50   ~ 0
+Power1
+Text Label 6100 2450 0    50   ~ 0
+Power2
+Text Label 6600 2750 1    50   ~ 0
+Power3
 $EndSCHEMATC
